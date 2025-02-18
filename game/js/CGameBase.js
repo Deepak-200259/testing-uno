@@ -214,8 +214,8 @@ CGameBase.prototype.onFirstLastCardDealed = function (oCard){
     //console.log("START GAME")
     var _oDeck_container_move_x,_oUsedCards_container_move_x;
     if(currentUI==="MOBILE_DEVICE"){
-        _oDeck_container_move_x = CANVAS_WIDTH/2-CARD_WIDTH * 3/10,
-        _oUsedCards_container_move_x = CANVAS_WIDTH/2+CARD_WIDTH * 3/10
+        _oDeck_container_move_x = CANVAS_WIDTH/2-CARD_WIDTH * 3.5/10,
+        _oUsedCards_container_move_x = CANVAS_WIDTH/2+CARD_WIDTH * 3.5/10
     } else if(currentUI==="IPAD_DEVICE"){
         _oDeck_container_move_x = CANVAS_WIDTH/2-CARD_WIDTH * 2/5+5,
         _oUsedCards_container_move_x = CANVAS_WIDTH/2+CARD_WIDTH* 2/5-5

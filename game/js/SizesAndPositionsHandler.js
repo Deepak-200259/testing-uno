@@ -38,18 +38,18 @@ const UI_SIZES_AND_POSITIONS = {
             y: CANVAS_HEIGHT / 2 -  sprite.image.height / 2
         }),
         game_oBgLogo: (sprite) => ({
-           scale : 1,
-           x: CANVAS_WIDTH / 2 - sprite.image.width / 2,
-           y: CANVAS_HEIGHT / 2 -  sprite.image.height / 2
+           scale : 1.2,
+           x: CANVAS_WIDTH / 2 - sprite.image.width / 2-20,
+           y: CANVAS_HEIGHT / 2 -  sprite.image.height / 2-16.5
         }),
         game_bg_center_box: (sprite) => ({
-            scale : 1,
-            x: CANVAS_WIDTH / 2 - sprite.image.width / 2,
-            y: CANVAS_HEIGHT / 2 - sprite.image.height / 2
+            scale : 1.2,
+            x: CANVAS_WIDTH / 2 - sprite.image.width / 2-20,
+            y: CANVAS_HEIGHT / 2 - sprite.image.height / 2-16.5
         }),
         handPositions: ()=>({
-            pos : [{x:(CANVAS_WIDTH/2), y: CANVAS_HEIGHT-(CARD_HEIGHT / 4) - 150, side: BOTTOM},{x:CARD_WIDTH / 1.15, y: (CANVAS_HEIGHT/2), side: LEFT},
-                {x:(CANVAS_WIDTH/2), y: CARD_HEIGHT / 4 + 150, side: TOP},{x:CANVAS_WIDTH - CARD_WIDTH / 1.15, y: (CANVAS_HEIGHT/2), side: RIGHT}]
+            pos : [{x:(CANVAS_WIDTH/2), y: CANVAS_HEIGHT-(CARD_HEIGHT / 4) - 120, side: BOTTOM},{x:CARD_WIDTH / 1.25, y: (CANVAS_HEIGHT/2), side: LEFT},
+                {x:(CANVAS_WIDTH/2), y: CARD_HEIGHT / 4 + 120, side: TOP},{x:CANVAS_WIDTH - CARD_WIDTH / 1.25, y: (CANVAS_HEIGHT/2), side: RIGHT}]
         }),
         _oDeck : ()=>({
             x: CANVAS_WIDTH/2,
@@ -62,27 +62,27 @@ const UI_SIZES_AND_POSITIONS = {
         game_colors:()=>({
             scale: 0.75,
             x: CANVAS_WIDTH/2,
-            y: CANVAS_HEIGHT/2 -150
+            y: CANVAS_HEIGHT/2 -180
         }),
         game_but_swap_color :()=>({
             scale: 0.75,
             x: CANVAS_WIDTH / 2 + 50,
-            y: CANVAS_HEIGHT /2 + 150
+            y: CANVAS_HEIGHT /2 + 170
         }),
         game_but_uno : ()=>({
             scale: 0.75,
             x: CANVAS_WIDTH/2 - 50,
-            y: CANVAS_HEIGHT/2 + 150
+            y: CANVAS_HEIGHT/2 + 170
         }),
         game_alt_text: ()=>({
             left:CANVAS_WIDTH/2 - 125,
-            top:CANVAS_HEIGHT/2 + 180,
+            top:CANVAS_HEIGHT/2 + 200,
             right:250,
             bottom:150,
-            font_size:20,
+            font_size:18,
         }),
         card_back : () =>({
-            scale: 0.6,
+            scale: 0.7,
             x: CARD_WIDTH/2,
             y: CARD_HEIGHT/2,
             width: CARD_WIDTH,
@@ -109,12 +109,12 @@ const UI_SIZES_AND_POSITIONS = {
             scale : 1
         }),
         panel_left_arrow : (_oContainer) => ({
-            x: _oContainer.getBounds().width/2-25,
+            x: _oContainer.getBounds().width/2-40,
             y:  0,
             scale: 0.75
         }),
         panel_right_arrow : (_oContainer) => ({
-            x : -(_oContainer.getBounds().width/2-25),
+            x : -(_oContainer.getBounds().width/2-40),
             y: 0,
             scale: 0.75
         }),
@@ -151,22 +151,22 @@ const UI_SIZES_AND_POSITIONS = {
             font_size : 30
         }),
         player_text: (_iWidth, _iOffsetX) =>({
-            font_size : 20,
-            x: -_iWidth/4 + _iOffsetX,
-            n_x: _iWidth/4 - _iOffsetX
+            font_size : 25,
+            x: -_iWidth/3 + _iOffsetX,
+            n_x: _iWidth/3 - _iOffsetX
         }),
         center_container : (oHandInfo, iOffsetY) =>({
-            x: - (oHandInfo.width / 2) + (CARD_WIDTH / 4),
-            y: - (oHandInfo.height / 2) + (CARD_WIDTH / 4),
-            tweenY :  CANVAS_HEIGHT / 2 + iOffsetY - 20
+            x: - (oHandInfo.width / 2) + (CARD_WIDTH / 3),
+            y: - (oHandInfo.height / 2) + (CARD_WIDTH / 3),
+            tweenY :  CANVAS_HEIGHT / 2 + iOffsetY
         }),
         player_info : {
-            bottom: (_oContainer)=>({x: _oContainer.x, y: _oContainer.y - 85}),
-            top: (_oContainer)=>({x: _oContainer.x, y: _oContainer.y + 85}),
-            left: (_oContainer)=>({x: _oContainer.x + 85, y: _oContainer.y}),
-            right: (_oContainer)=>({x: _oContainer.x - 85, y: _oContainer.y}),
-            globalPos : ()=>({x: CARD_WIDTH / 4, y: CARD_HEIGHT / 4}),
-            offset: () =>({x: CARD_WIDTH / 4, y: CARD_HEIGHT / 8})
+            bottom: (_oContainer)=>({x: _oContainer.x, y: _oContainer.y - 100}),
+            top: (_oContainer)=>({x: _oContainer.x, y: _oContainer.y + 100}),
+            left: (_oContainer)=>({x: _oContainer.x + 100, y: _oContainer.y}),
+            right: (_oContainer)=>({x: _oContainer.x - 100, y: _oContainer.y}),
+            globalPos : ()=>({x: CARD_WIDTH / 3, y: CARD_HEIGHT / 3}),
+            offset: () =>({x: CARD_WIDTH / 3, y: CARD_HEIGHT / 6})
         },
         summary_but_home: ()=>({
             x: CANVAS_WIDTH/2 - 140,
