@@ -16,6 +16,7 @@ CGameSingle.prototype._startGame = function(){
     s_bFirstGame = false;
     
     this._oUnoController.setVisible(true);
+    this._oInterface._oSwapColorButton.setVisible(true);
     
     this._oUnoController.addEventListener(ON_APPLY_EFFECT, this.applyEffectOnCard, this);
     this._oUnoController.addEventListener(ON_APPLY_PENALITY, this.applyPenality, this);
