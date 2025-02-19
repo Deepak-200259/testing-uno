@@ -148,8 +148,8 @@ CGameSingle.prototype.onNextTurn = function(){
 
         if (iThisTurn===0){
             this.onInputPlayer(iThisTurn);
-            this._oInterface._oSwapColorButton.setClickable(true);
             if(this._oInterface._noOfTimesSwapped<3) {
+                this._oInterface._oSwapColorButton.setClickable(true);
                 this._oInterface._oSwapColorButton.blinkAnimation();
             }
             if (!this.playerCanPlay(iThisTurn)){
@@ -167,31 +167,32 @@ CGameSingle.prototype.onNextTurn = function(){
 
 CGameSingle.prototype.playCard = function(oCard,Event){
     if(this.isSwappingColor === false){
-    var iThisTurn = this._oTurnManager.getTurn();
-    var bCanPlay = false;
-    var iPlayerID = 0;
-    if (iThisTurn===iPlayerID){
-        bCanPlay = this.cardCanBePlayed(oCard, iThisTurn);
-    }
-    
-    if(bCanPlay){
-        this._oCardsContainer.addChildAt(this._oHandsContainer,this._oCardsContainer.numChildren);
-        this._aPlayersHand[iThisTurn].setOnTop();
-        this._oDeck.disableInputDraw();
-        this._oInterface._oSwapColorButton.setClickable(false);
-        this.offInputPlayer(iPlayerID);
-
+        var iThisTurn = this._oTurnManager.getTurn();
+        var bCanPlay = false;
+        var iPlayerID = 0;
+        if (iThisTurn===iPlayerID){
+            bCanPlay = this.cardCanBePlayed(oCard, iThisTurn);
+        }
         
-        var oHandGlobalPos =this._aPlayersHand[iThisTurn].getContainerPos();
-        var oUsedCardsGlobalPos = this._oUsedCards.getGlobalPosition();
+        if(bCanPlay){
+            this._oCardsContainer.addChildAt(this._oHandsContainer,this._oCardsContainer.numChildren);
+            this._aPlayersHand[iThisTurn].setOnTop();
+            this._oDeck.disableInputDraw();
+            this._oInterface._oSwapColorButton.setClickable(false);
+            this.offInputPlayer(iPlayerID);
 
-        playSound("card",1,false);
+            
+            var oHandGlobalPos =this._aPlayersHand[iThisTurn].getContainerPos();
+            var oUsedCardsGlobalPos = this._oUsedCards.getGlobalPosition();
 
-        oCard.moveCard((oUsedCardsGlobalPos.x-oHandGlobalPos.x),oUsedCardsGlobalPos.y-oHandGlobalPos.y,0,300);
-        oCard.showCard();
+            playSound("card",1,false);
 
-        this._oUsedCards.setChildDepth(4);
-    }    }
+            oCard.moveCard((oUsedCardsGlobalPos.x-oHandGlobalPos.x),oUsedCardsGlobalPos.y-oHandGlobalPos.y,0,300);
+            oCard.showCard();
+
+            this._oUsedCards.setChildDepth(4);
+        }    
+    }
 };
 
 CGameSingle.prototype.playedCard = function(oCard){
@@ -229,11 +230,13 @@ CGameSingle.prototype._checkIfCardStillNotAvailable = function (){
         var iThisTurn = this._oTurnManager.getTurn();
         if (iThisTurn===0){
             if(this._oInterface._noOfTimesSwapped<3) {
+                    this._oInterface._oSwapColorButton.setClickable(true);
                     this._oInterface._oSwapColorButton.blinkAnimation();
             }
             if (!this.playerCanPlay(iThisTurn)){
                 this._oDeck.setHelp();
             }
+            this._oInterface.checkSwap();
         }
 }
 
@@ -241,6 +244,7 @@ CGameSingle.prototype._onSwapColorClick = function(){
     if(this._oInterface._oSwapColorButton.isVisible() && this._oInterface._noOfTimesSwapped<3){
         if(this._iCurPlayer === 0){
             globalThis.gameManager.showRewardedAd("FOUR_COLORS_SWAP");
+            this._oInterface._oSwapColorButton.setClickable(true);
         }
     }
 };
