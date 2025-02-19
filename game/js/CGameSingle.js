@@ -403,6 +403,7 @@ CGameSingle.prototype._changeCenterCardColor = function(color){
         let changedCard = new CCard(0,0,this._oUsedCards.getContainer(),this._oUsedCards.getLastCard().getRank() + 13 * color,this._oUsedCards.getLastCard().getRank(),color,this._oUsedCards.iUniqueID++,0)
         changedCard.showCard(0);
         this._oUsedCards.addNewCardUnderTheDeck([changedCard]);
+        this._oInterface.checkSwap();
     }
 }
 
