@@ -241,6 +241,7 @@ CGameBase.prototype.onFirstLastCardDealed = function (oCard){
     this._oUsedCards.disableInputUsedCards();
     
     this._onFirstTurnStart();
+    this._oInterface._oSwapColorButton.setVisible(true);
 };
 
 CGameBase.prototype._onFirstTurnStart = function(){    

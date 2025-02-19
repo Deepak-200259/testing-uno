@@ -117,7 +117,7 @@ const checkDevice = () => {
         } else if (isMobile){
             return "MOBILE_DEVICE"; // Most mobile phones in portrait mode
         } else {
-            return "DESKTOP_DEVICE";
+            return "IPAD_DEVICE";
         }
     } else {
         if((isIpad || isAndroidTablet) && isTouchDevice && aspectRatio >= 0.65 && aspectRatio <= 0.75){

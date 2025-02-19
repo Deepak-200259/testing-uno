@@ -71,8 +71,9 @@ function CInterface(){
         var buttonY = UI_SIZES_AND_POSITIONS[currentUI].game_but_swap_color().y;
         this._oSwapColorButton =  new CGfxButton(buttonX,buttonY,swapColor,_oContainer, 
             UI_SIZES_AND_POSITIONS[currentUI].game_but_swap_color().scale);
-        this._oSwapColorButton.setVisible(true)
-        this._oSwapColorButton.blinkAnimation()  
+        this._oSwapColorButton.setVisible(false)
+        // this._oSwapColorButton.blinkAnimation()
+        this._oSwapColorButton.setClickable(false)  
         s_oStage.addChild(_oContainer);
         this.refreshButtonPos();
     };
@@ -82,6 +83,11 @@ function CInterface(){
         s_oStage.addChildAt(_oColorSprite, currentUI ==="DESKTOP_DEVICE" ? 1 : 4);
     };
     
+    this.checkSwap = function(){
+        if(this._noOfTimesSwapped > 3 ){
+            this._oSwapColorButton.setClickable(false);
+        }
+    }
     
     
     this.unload = function(){

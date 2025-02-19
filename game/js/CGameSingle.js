@@ -160,6 +160,7 @@ CGameSingle.prototype.onNextTurn = function(){
             this._oInterface._oSwapColorButton.removeBlinkAnimation();
             this._oDeck.hideHelp();
         }
+        this._oInterface.checkSwap();
     }
 };
 
