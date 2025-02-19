@@ -84,7 +84,7 @@ function CInterface(){
     };
     
     this.checkSwap = function(){
-        if(this._noOfTimesSwapped > 3 ){
+        if(this._noOfTimesSwapped >= 3 ){
             this._oSwapColorButton.setClickable(false);
         }
     }
