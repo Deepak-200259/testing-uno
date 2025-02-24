@@ -48,7 +48,8 @@ function preventWrongOrientation() {
     const isTablet = checkDevice().includes("IPAD");
     const isDeskTop =   checkDevice().includes("DESKTOP")
     // Get the current orientation of the screen
-    const isPortrait = window.matchMedia("(orientation: portrait)").matches;
+    const isPortrait = window.innerHeight > window.innerWidth;
+    console.log("Is Portrait:", isPortrait);
 
     // Get the element for block_game
     const blockGameElement = document.getElementById("block_game");
