@@ -49,7 +49,6 @@ function preventWrongOrientation() {
     const isDeskTop =   checkDevice().includes("DESKTOP")
     // Get the current orientation of the screen
     const isPortrait = window.innerHeight > window.innerWidth;
-    console.log("Is Portrait:", isPortrait);
 
     // Get the element for block_game
     const blockGameElement = document.getElementById("block_game");
@@ -57,10 +56,8 @@ function preventWrongOrientation() {
     if (isMobile) {
         // For tablets: Always show the block_game screen regardless of orientation
         if (isPortrait) {
-            console.log("Portrait (Mobile)");
             blockGameElement.style.display = "none"; // Hide in portrait mode
         } else {
-            console.log("Not Portrait(Mobile)");
             blockGameElement.style.display = "block"; // Show in landscape mode
         }
     } else if (isTablet) {
@@ -71,8 +68,6 @@ function preventWrongOrientation() {
             blockGameElement.style.display = "none"; // Show in landscape mode
         }
     } else if (isDeskTop){
-        console.log("Is Desktop");
-        
         blockGameElement.style.display = "none"
     }
 }

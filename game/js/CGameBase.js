@@ -211,7 +211,6 @@ CGameBase.prototype.onCardDealed = function(oCard){
 };
 
 CGameBase.prototype.onFirstLastCardDealed = function (oCard){
-    //console.log("START GAME")
     var _oDeck_container_move_x,_oUsedCards_container_move_x;
     if(currentUI==="MOBILE_DEVICE"){
         _oDeck_container_move_x = CANVAS_WIDTH/2-CARD_WIDTH * 3.5/10,
@@ -231,7 +230,7 @@ CGameBase.prototype.onFirstLastCardDealed = function (oCard){
     this._oUsedCards.moveContainer(_oUsedCards_container_move_x,CANVAS_HEIGHT/2,400);
     this._iCurrentColor = this._oUsedCards.getLastCard().getSuit();
     this._oInterface.refreshColor(this._iCurrentColor);
-    
+    this._oInterface._oSwapColorButton.setClickable(true);
     //this._oTurnManager.setFirstPlayerToBegin();
     this._iCurPlayer = this._oTurnManager.getTurn();
     this._iNextPlayer = this._oTurnManager.getNextPlayer();
